@@ -74,7 +74,7 @@ The backend exposes the following REST endpoints to manage bank accounts:
 ## Project Screenshots
 
 ### Homepage
-![Project Screenshot](/assets/homepage.png)
+![Project Screenshot](assets/homepage.png)
 
 ### Account creation
 ![Project Screenshot](assets/account.png)
