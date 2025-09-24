@@ -71,3 +71,19 @@ The backend exposes the following REST endpoints to manage bank accounts:
 1.  Navigate to the `bankmanagementsystem frontend` directory.
 2.  Open the `index.html` file in your web browser.
 
+## Project Screenshots
+
+### Homepage
+![Project Screenshot](assets/homepage.png)
+
+### Account creation
+![Project Screenshot](assets/account.png)
+
+### Balance check
+![Project Screenshot](assets/balance.png)
+
+### Deposit
+![Project Screenshot](assets/deposit.png)
+
+### Withdraw
+![Project Screenshot](assets/withdraw.png)
