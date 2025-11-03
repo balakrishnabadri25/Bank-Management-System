@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Balance</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Check Account Balance</h1>
+        <form id="balance-form">
+            <label for="accno">Account No:</label>
+            <input type="text" placeholder="Enter your account number" name="acc_id" id="accno" required>
+            <button type="submit">Check Balance</button>
+            <p id="result"></p>
+        </form>
+        <a href="index.html"><button class="back-button">Back to Home</button></a>
+    </div>
+    <script>
+        document.getElementById('balance-form').addEventListener('submit', async (event) => {
+            // Prevent the browser's default form submission
+            event.preventDefault();
+
+            const accId = document.getElementById('accno').value;
+            const resultElement = document.getElementById('result');
+
+            // Clear previous results and validate the input
+            resultElement.innerText = '';
+            if (!accId || isNaN(parseInt(accId))) {
+                resultElement.innerText = 'Please enter a valid account number.';
+                return;
+            }
+
+            try {
+                // Use a GET request for checking the balance, as per your Spring Boot controller
+                const response = await fetch(`http://localhost:8080/balance/${accId}`);
+                
+                // The backend returns an integer, so we use response.text()
+                const data = await response.text();
+
+                if (response.ok) {
+                    resultElement.innerText = `Current balance: ${data}`;
+                } else {
+                    resultElement.innerText = `Error: ${data || response.statusText}`;
+                }
+            } catch (error) {
+                resultElement.innerText = 'Error checking balance. Please check your network and server status.';
+                console.error('Fetch error:', error);
+            }
+        });
+    </script>
+</body>
+</html>

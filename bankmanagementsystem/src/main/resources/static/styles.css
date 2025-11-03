@@ -1,0 +1,149 @@
+/* General Body Styles */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #333;
+}
+
+/* Main Container for all pages */
+.container {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Header Styles */
+header h1, .container > h1 {
+    color: #1a237e; /* Dark blue */
+    margin-bottom: 10px;
+}
+
+header h2 {
+    color: #555;
+    font-weight: 400;
+    margin-bottom: 40px;
+}
+
+/* Action Cards Layout (for index.html) */
+.actions-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Individual Action Card */
+.action-card {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 20px;
+    width: calc(50% - 40px);
+    box-sizing: border-box;
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.action-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.action-card h3 {
+    margin-top: 0;
+    color: #004d40; /* Dark teal */
+}
+
+.action-card p {
+    flex-grow: 1;
+    color: #666;
+}
+
+/* Form Styles (for newacc, deposit, etc.) */
+form {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+form label {
+    font-weight: 600;
+    color: #333;
+}
+
+form input[type="text"],
+form input[type="number"] {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 80%;
+    max-width: 350px;
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+
+form input:focus {
+    outline: none;
+    border-color: #1a237e;
+    box-shadow: 0 0 0 2px rgba(26, 35, 126, 0.2);
+}
+
+/* Button Styles */
+button {
+    background-color: #2196f3; /* Bright Blue */
+    font-size: 1rem;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #1976d2; /* Darker Blue */
+}
+
+.back-button {
+    display: inline-block;
+    margin-top: 25px;
+    background-color: #6c757d; /* Gray */
+}
+
+.back-button:hover {
+    background-color: #5a6268;
+}
+
+/* Result Message */
+#result {
+    margin-top: 20px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #004d40;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .action-card {
+        width: 100%;
+    }
+    form input[type="text"],
+    form input[type="number"] {
+        width: 100%;
+    }
+}

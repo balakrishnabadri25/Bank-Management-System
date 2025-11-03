@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deposit Money</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Deposit Money</h1>
+        <form id="deposit-form">
+            <label for="accno">Account No:</label>
+            <input type="text" placeholder="Enter your account number" name="acc_id" id="accno" required>
+            <label for="amount">Amount:</label>
+            <input type="number" placeholder="Enter amount to deposit" name="amount" id="amount" required>
+            <button type="submit">Deposit</button>
+            <p id="result"></p>
+        </form>
+        <a href="index.html"><button class="back-button">Back to Home</button></a>
+    </div>
+    <script>
+        document.getElementById('deposit-form').addEventListener('submit', async (event) => {
+            // This is the crucial line that prevents the browser's default form submission
+            event.preventDefault();
+
+            const accId = document.getElementById('accno').value;
+            const amount = document.getElementById('amount').value;
+            const resultElement = document.getElementById('result');
+
+            // Clear previous results and perform validation
+            resultElement.innerText = '';
+            if (!accId || !amount || isNaN(parseInt(accId)) || isNaN(parseInt(amount))) {
+                resultElement.innerText = 'Please enter a valid account number and amount.';
+                return;
+            }
+
+            // Create the JSON payload. Note: The backend expects 'balance'
+            const payload = { balance: parseInt(amount) };
+
+            try {
+                // Construct the URL with the account ID from the form
+                const response = await fetch(`http://localhost:8080/accounts/${accId}/deposit`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(payload)
+                });
+                
+                // The backend returns a plain String, so use response.text()
+                const data = await response.text();
+
+                if (response.ok) {
+                    resultElement.innerText = data; // e.g., "Your total balance : 1234"
+                } else {
+                    resultElement.innerText = data || `Error: ${response.status} ${response.statusText}`;
+                }
+            } catch (error) {
+                resultElement.innerText = 'Error depositing money. Please check your network and server status.';
+                console.error('Fetch error:', error);
+            }
+        });
+    </script>
+</body>
+</html>
