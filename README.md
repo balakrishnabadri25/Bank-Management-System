@@ -41,6 +41,14 @@ The backend exposes the following REST endpoints to manage bank accounts:
 | `POST`      | `/accounts/{acc_id}/deposit`   | Deposits a specified amount into an account. | `Accounts` object with the deposit amount | A string with the updated balance |
 | `POST`      | `/accounts/{acc_id}/withdraw`  | Withdraws a specified amount from an account. | `Accounts` object with the withdrawal amount | A string with the updated balance |
 
+## API Documentation
+
+This application includes Swagger UI for interactive API documentation.
+
+![Swagger UI](assets/APIdoc.png)
+
+Access it locally at: `http://localhost:8080/swagger-ui/index.html`
+
 ## 💻 How to Run
 
 ### Prerequisites
