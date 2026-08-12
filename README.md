@@ -5,10 +5,10 @@ This is a full-stack web application that provides a simple and intuitive interf
 ## ✨ Features
 
 *   **Create New Account:** Easily create a new bank account with an initial deposit.
-*   **Check Balance:** Quickly check the current balance of any account.
-*   **Deposit Funds:** Add funds to an existing account.
-*   **Withdraw Funds:** Withdraw funds from an existing account.
-*   **View All Accounts:** See a list of all bank accounts in the system.
+*   **My Account:** A private, personal dashboard — you only ever see and manage your own account.
+*   **Check Balance:** Quickly check the current balance of your account.
+*   **Deposit Funds:** Add funds to your account.
+*   **Withdraw Funds:** Withdraw funds from your account.
 *   **RESTful API:** A well-defined API for interacting with the backend services.
 
 ## 🚀 Technologies Used
