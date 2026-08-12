@@ -1,14 +1,14 @@
 # Bank Management System
 
-This is a full-stack web application that provides a simple and intuitive interface for managing bank accounts. It allows users to create new accounts, check balances, deposit and withdraw funds, and view all accounts.
+A full-stack web application for managing bank accounts, built with a modern personal-banking experience. Create an account, check your balance, deposit and withdraw funds — all from a sleek single-page dashboard where you only ever see **your own account**.
 
 ## ✨ Features
 
-*   **Create New Account:** Easily create a new bank account with an initial deposit.
+*   **Create New Account:** Open a new bank account with an initial deposit in seconds.
 *   **My Account:** A private, personal dashboard — you only ever see and manage your own account.
-*   **Check Balance:** Quickly check the current balance of your account.
-*   **Deposit Funds:** Add funds to your account.
-*   **Withdraw Funds:** Withdraw funds from your account.
+*   **Check Balance:** See your current balance at a glance, any time.
+*   **Deposit Funds:** Add funds to your account and watch your savings grow.
+*   **Withdraw Funds:** Access your money quickly and easily, whenever you need it.
 *   **RESTful API:** A well-defined API for interacting with the backend services.
 
 ## 🚀 Technologies Used
@@ -25,9 +25,9 @@ This is a full-stack web application that provides a simple and intuitive interf
 
 ### Frontend
 
-*   **HTML:** For the structure of the web pages.
-*   **CSS:** For styling the user interface.
-*   **JavaScript:** For client-side logic and interacting with the backend API.
+*   **Vanilla JavaScript single-page app** — no build step, no dependencies, served directly by Spring Boot from `src/main/resources/static`.
+*   **HTML / CSS:** Semantic markup with a custom dark fintech design system (glass surfaces, gradient accents, fully responsive).
+*   **Hash-based routing** with animated views, live form validation, toast notifications and offline detection with a retry option.
 
 ## API Endpoints
 
@@ -72,26 +72,10 @@ Access it locally at: `http://localhost:8080/swagger-ui/index.html`
     ```bash
     mvn spring-boot:run
     ```
-    The backend server will start on `http://localhost:8080`.
+    The server starts at `http://localhost:8080`.
 
-### Frontend Setup
+### Using the App
 
-1.  Navigate to the `bankmanagementsystem frontend` directory.
-2.  Open the `index.html` file in your web browser.
-
-## Project Screenshots
-
-### Homepage
-![Project Screenshot](assets/homepage.png)
-
-### Account creation
-![Project Screenshot](assets/account.png)
-
-### Balance check
-![Project Screenshot](assets/balance.png)
-
-### Deposit
-![Project Screenshot](assets/deposit.png)
-
-### Withdraw
-![Project Screenshot](assets/withdraw.png)
+1.  Open `http://localhost:8080` in your browser — the frontend is served by Spring Boot itself, so there is **no separate frontend setup**.
+2.  Click **Open an Account** to get your account number, then use it to check your balance, deposit and withdraw. You only ever see your own account.
+3.  Interactive API docs (Swagger UI) are available at `http://localhost:8080/swagger-ui/index.html`.
