@@ -79,3 +79,20 @@ Access it locally at: `http://localhost:8080/swagger-ui/index.html`
 1.  Open `http://localhost:8080` in your browser — the frontend is served by Spring Boot itself, so there is **no separate frontend setup**.
 2.  Click **Open an Account** to get your account number, then use it to check your balance, deposit and withdraw. You only ever see your own account.
 3.  Interactive API docs (Swagger UI) are available at `http://localhost:8080/swagger-ui/index.html`.
+
+## 📸 Project Screenshots
+
+### Homepage
+![Homepage](assets/homepage.png)
+
+### Open Account
+![Open Account](assets/account.png)
+
+### Check Balance
+![Check Balance](assets/balance.png)
+
+### Deposit
+![Deposit](assets/deposit.png)
+
+### Withdraw
+![Withdraw](assets/withdraw.png)
